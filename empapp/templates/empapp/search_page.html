@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Employee Search</title>
+</head>
+<body>
+    <h1>Employee Search</h1>
+    <form action="{% url 'employee_search' 'empname' 'startswith' '' %}" method="get">
+        <!-- Replace 'empname', 'startswith', and '' with default values or variables -->
+        <!-- You can use JavaScript or Django template tags to make the form dynamic -->
+        <label for="search_field">Search Field:</label>
+        <select name="field" id="search_field">
+            <option value="empid">Employee ID</option>
+            <option value="fname">First Name</option>
+            <option value="lname">Last Name</option>
+            <option value="age">Age</option>
+            <option value="address">Address</option>
+        </select>
+        <label for="search_method">Search Method:</label>
+        <select name="lookup" id="search_method">
+            <option value="startswith">Starts With</option>
+            <option value="contains">Contains</option>
+            <option value="lte">Less Than or Equal To</option>
+        </select>
+        <input type="text" name="search_string" placeholder="Search String">
+        <button type="submit">Search</button>
+    </form>
+</body>
+</html>
